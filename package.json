@@ -2,6 +2,15 @@
   "name": "honeybadger-vue3-composition-api",
   "private": false,
   "version": "0.0.1",
+  "repository": "https://github.com/otavio-paganotti/honeybadger-vue3-composition-api",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "vue3",
+    "composition-api",
+    "honeybadger"
+  ],
+  "author": "Otávio Paganotti <otaviopaganotti@outlook.com>",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
