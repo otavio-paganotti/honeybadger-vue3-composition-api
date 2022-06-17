@@ -1,19 +1,16 @@
 import Honeybadger from '@honeybadger-io/js'
 import { logError } from '@/error-logging.js'
-import { ref } from 'vue';
 
-export const useHoneybadger = () => {
-  const honeybadger = ref(Honeybadger.configure(options));
-
-  return honeybadger.value;
-}
+export let useHoneybadger = null;
 
 const HoneybadgerVue = {
   install (app, options) {
     if (app.config.debug) {
       console.log(`Honeybadger configured with ${options.apiKey}`)
     }
-    const honeybadger = useHoneybadger()
+    const honeybadger = Honeybadger.configure(options)
+    
+    useHoneybadger = honeybadger;
     app.$honeybadger = honeybadger
     app.config.globalProperties.$honeybadger = honeybadger
     const chainedErrorHandler = app.config.errorHandler
