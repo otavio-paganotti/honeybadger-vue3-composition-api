@@ -10,7 +10,7 @@ const HoneybadgerVue = {
     }
     const honeybadger = Honeybadger.configure(options)
     
-    useHoneybadger = honeybadger;
+    useHoneybadger = () => honeybadger;
     app.$honeybadger = honeybadger
     app.config.globalProperties.$honeybadger = honeybadger
     const chainedErrorHandler = app.config.errorHandler
